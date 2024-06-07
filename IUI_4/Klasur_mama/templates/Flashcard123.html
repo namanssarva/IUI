@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flippantstyles.css">
+    <title>Flippant.js Example</title>
+    <script src="flippant.js"></script>
+    <link rel="stylesheet" href="Flashcard123.css">
+</head>
+<body>
+    <div id="flipMe" style="width: 100px; height: 100px; background-color: red;">
+        Click me to flip!
+    </div>
+    <div id="flipMeBack" style="width: 100px; height: 100px; background-color: blue;">
+        Click me to flip back!
+    </div>
+    <div id="customBlock1" style="width: 150px; height: 150px; background-color: green;">
+        Custom Block 1
+    </div>
+    <div id="customBlock2" style="width: 150px; height: 150px; background-color: yellow;">
+        Custom Block 2
+    </div>
+    <div class="flip-container">
+        <div id="customBlock3" class="custom-block front">
+          Custom Block 3
+        </div>
+      </div>
+      
+      <div class="flip-container">
+        <div id="customBlock4" class="custom-block front">
+          Custom Block 4
+        </div>
+      </div>
+      
+      <div class="flip-container">
+        <div id="customBlock5" class="custom-block front">
+          Custom Block 5
+        </div>
+      </div>
+      
+      <div class="flip-container">
+        <div id="customBlock6" class="custom-block front">
+          Custom Block 6
+        </div>
+      </div>
+      
+      <div class="flip-container">
+        <div id="customBlock7" class="custom-block front">
+          Custom Block 7
+        </div>
+      </div>
+      
+
+    <script>
+        var flipMe = document.getElementById('flipMe');
+        var flipMeBack = document.getElementById('flipMeBack');
+        var customBlock1 = document.getElementById('customBlock1');
+        var customBlock2 = document.getElementById('customBlock2');
+
+        var originalContentFlipMe = flipMe.innerHTML;
+        var originalContentFlipMeBack = flipMeBack.innerHTML;
+        var originalContentCustomBlock1 = customBlock1.innerHTML;
+        var originalContentCustomBlock2 = customBlock2.innerHTML;
+
+        flipMe.addEventListener('click', function() {
+            if (flipMe.innerHTML === originalContentFlipMe) {
+                flippant.flip(flipMe, '<div style="width: 100px; height: 100px; background-color: blue;" class="flippant">Flipped!</div>');
+            } else {
+                flipMe.innerHTML = originalContentFlipMe;
+            }
+        });
+
+        flipMeBack.addEventListener('click', function() {
+            if (flipMeBack.innerHTML === originalContentFlipMeBack) {
+                flippant.flip(flipMeBack, '<div style="width: 100px; height: 100px; background-color: red;" class="flippant">Flipped back!</div>');
+            } else {
+                flipMeBack.innerHTML = originalContentFlipMeBack;
+            }
+        });
+
+        customBlock1.addEventListener('click', function() {
+            if (customBlock1.innerHTML === originalContentCustomBlock1) {
+                flippant.flip(customBlock1, '<div style="width: 150px; height: 150px; background-color: purple;" class="flippant">Custom Block 1 Flipped!</div>');
+            } else {
+                customBlock1.innerHTML = originalContentCustomBlock1;
+            }
+        });
+
+        customBlock2.addEventListener('click', function() {
+            if (customBlock2.innerHTML === originalContentCustomBlock2) {
+                flippant.flip(customBlock2, '<div style="width: 150px; height: 150px; background-color: orange;" class="flippant">Custom Block 2 Flipped!</div>');
+            } else {
+                customBlock2.innerHTML = originalContentCustomBlock2;
+            }
+        });
+    </script>
+</body>
+</html>

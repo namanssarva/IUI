@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1em;
+}
+.navbar a:hover {
+    color: #f0a500;
+}
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+.hero .button {
+    background-color: #f0a500;
+    color: #fff;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+.hero .button:hover {
+    background-color: #e59400;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 0;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+    z-index: 1;
+    position: relative;
+}
+.feature-box {
+    text-align: center;
+    padding: 1em;
+}
+.feature-box i {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.background-grid div {
+    background-size: cover;
+    background-position: center;
+}
+.background-grid div:nth-child(1) { background-image: url('C:\Users\Vedansh\OneDrive\Desktop\IUI Website\Screenshot 2024-06-06 161114.png'); }
+.background-grid div:nth-child(2) { background-image: url('image2.jpg'); }
+.background-grid div:nth-child(3) { background-image: url('image3.jpg'); }
+.background-grid div:nth-child(4) { background-image: url('image4.jpg'); }
+.background-grid div:nth-child(5) { background-image: url('image5.jpg'); }
+.background-grid div:nth-child(6) { background-image: url('image6.jpg'); }
+.background-grid div:nth-child(7) { background-image: url('image7.jpg'); }
+.background-grid div:nth-child(8) { background-image: url('image8.jpg'); }
+.background-grid div:nth-child(9) { background-image: url('image9.jpg'); }
