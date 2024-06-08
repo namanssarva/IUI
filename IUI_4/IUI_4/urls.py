@@ -20,5 +20,8 @@ from Klasur_mama import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path("",views.home)
+    path("",views.home, name="home"),
+    
+    path('upload/', views.upload_document, name='upload_document'),
+    path('process/<int:document_id>/', views.process_document, name='process_document'),
 ]

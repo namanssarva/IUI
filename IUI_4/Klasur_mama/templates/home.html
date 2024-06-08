@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universität Bayreuth</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <section class="default" id="house">
+        <div class="logo">Universität Bayreuth</div>
+      </section>
+
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#quiz-generator">Quiz Generation</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <h1>KLAUSUR MAMA</h1>
+      <p>Your personalized Study Assistant</p>
+      <a href="#" class="button" id="uploadBtn">Upload document</a>
+    </section>
+
+    <section class="features">
+      <div class="feature-box">
+        <i class="fa fa-book"></i>
+        <h3>Personal statistics</h3>
+      </div>
+      <div class="feature-box">
+        <i class="fa fa-laptop"></i>
+        <h3>College Community</h3>
+      </div>
+      <div class="feature-box">
+        <i class="fa fa-users"></i>
+        <h3>Profile Management</h3>
+      </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="uploadModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Upload Document</h2>
+        <input type="file" id="fileInput" />
+        <div class="modal-buttons">
+          <button class="action-button" id="generateQuiz">Generate Quiz</button>
+          <button class="action-button" id="generateFlashcard">
+            Generate Flashcard
+          </button>
+          <button class="action-button" id="generateSummary">
+            Generate Summary
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+  </body>
+</html>
