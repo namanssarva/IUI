@@ -3,12 +3,13 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from .forms import DocumentForm
 from .models import UploadedDocument
+import os
 import openai
 from django.conf import settings
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html")
+    return render(request, "website/index.html")
 
 
 openai.api_key = settings.OPENAI_API_KEY
