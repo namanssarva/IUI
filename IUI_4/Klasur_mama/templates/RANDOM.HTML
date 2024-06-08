@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edX | Free Online Courses by Harvard, MIT, & more</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: darkgreen;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004080;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 80vh;
+            background: url('C:\Users\Vedansh\OneDrive\Desktop\IUI Website\Screenshot_6-6-2024_161050_.jpeg') no-repeat center center/cover;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #fff; /* White color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+            background: linear-gradient(45deg, #00f, #0f0); /* Blue to green gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Lobster', cursive; /* New font */
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+        .hero .button {
+            background-color: #0ef31a;
+            color: rgb(73, 11, 220);
+            padding: 1em 2em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1em;
+        }
+        .hero .button:hover {
+            background-color: #fa0871;
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .course {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .course img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .course h3 {
+            color: #002f63;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #002f63;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Universität Bayreuth</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Profile Management</a>
+        <a href="#">Personal statistics</a>
+        <a href="#">About Us</a>
+        <a href="#">Sign In</a>
+    </nav>
+
+    <div class="hero">
+        <h1>KLAUSUR MAMA</h1>
+        <p><i>Your personalized Study Assistant</i></p>
+        
+        <input type="file" id="pdfInput" class="button" accept="application/pdf ">
+        <p id="filePath"></p>
+        <button  class="button" id="uploadButton" disabled>Upload PDF</button>
+    
+        <script>
+            let selectedFile = null;
+    
+            document.getElementById('pdfInput').addEventListener('change', function(event) {
+                selectedFile = event.target.files[0];
+                const filePathElement = document.getElementById('filePath');
+                const uploadButton = document.getElementById('uploadButton');
+                
+                if (selectedFile) {
+                    if (selectedFile.type === "application/pdf") {
+                        filePathElement.textContent = `Selected file: ${selectedFile.name}`;
+                        uploadButton.disabled = false; // Enable the upload button
+                    } else {
+                        filePathElement.textContent = "Please select a valid PDF file.";
+                        uploadButton.disabled = true; // Disable the upload button
+                    }
+                } else {
+                    filePathElement.textContent = "No file selected.";
+                    uploadButton.disabled = true; // Disable the upload button
+                }
+            });
+    
+            document.getElementById('uploadButton').addEventListener('click', function() {
+                if (selectedFile) {
+                    // Handle the upload process
+                    // For example, you can use XMLHttpRequest or fetch to upload the file to the server
+    
+                    const formData = new FormData();
+                    formData.append('file', selectedFile);
+    
+                    // Replace 'your_upload_url' with the actual URL to handle the file upload on the server
+                    fetch('your_upload_url', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        document.getElementById('filePath').textContent = 'File uploaded successfully!';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        document.getElementById('filePath').textContent = 'File upload failed!';
+                    });
+                }
+            });
+        </script>
+    </div>
+    <div class="container">
+        <section class="course-list">
+            <div class="course">
+                <img src="C:\Users\Vedansh\OneDrive\Desktop\IUI Website\Screenshot 2024-06-06 161148.png" alt="Course Image">
+                <h3>Quiz Generation</h3>
+                
+            </div>
+            <div class="course">
+                <img src="C:\Users\Vedansh\OneDrive\Desktop\IUI Website\Screenshot_6-6-2024_161027_.jpeg">
+                <h3>Flashcards</h3>
+                
+            </div>
+            <div class="course">
+                <img src="C:\Users\Vedansh\OneDrive\Desktop\IUI Website\Screenshot 2024-06-06 161231.png">
+                <h3>College Community</h3>
+                
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>
