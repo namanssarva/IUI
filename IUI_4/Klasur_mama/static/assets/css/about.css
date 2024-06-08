@@ -1,0 +1,89 @@
+.body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero {
+    background-color: #1e2a38;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.team {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.team h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.team h2 span {
+    color: #007BFF;
+}
+
+.member-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member {
+    background-color: #fff;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+}
+
+.member h3 {
+    font-size: 1.5em;
+    margin: 10px 0 5px;
+}
+
+.member p {
+    font-size: 0.9em;
+    color: #777;
+    margin: 5px 20px 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
