@@ -9,7 +9,7 @@ from django.conf import settings
 
 # Create your views here.
 def home(request):
-    return render(request, "website/index.html")
+    return render(request, "index.html")
 
 
 openai.api_key = settings.OPENAI_API_KEY
