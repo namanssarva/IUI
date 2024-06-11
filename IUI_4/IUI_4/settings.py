@@ -138,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #openai api key
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'your_openai_api_key_here')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

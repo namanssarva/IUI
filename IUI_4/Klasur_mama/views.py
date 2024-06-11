@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.http import JsonResponse
 from .forms import DocumentForm
 from .models import UploadedDocument
 import openai
 from django.conf import settings
+import os
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
-# Create your views here.
 def home(request):
     return render(request, "home.html")
-
 
 openai.api_key = settings.OPENAI_API_KEY
 
@@ -36,10 +36,16 @@ def process_document(request, document_id):
     flashcard = generate_flashcard(file_content)
     summary = generate_summary(file_content)
 
+    # Generate PDF
+    pdf_filename = f"{document_id}_output.pdf"
+    pdf_path = os.path.join(settings.MEDIA_ROOT, pdf_filename)
+    generate_pdf(pdf_path, quiz, flashcard, summary)
+
     return JsonResponse({
         'quiz': quiz,
         'flashcard': flashcard,
-        'summary': summary
+        'summary': summary,
+        'pdf_url': request.build_absolute_uri(f"/media/{pdf_filename}")
     })
 
 def generate_quiz(content):
@@ -65,3 +71,18 @@ def generate_summary(content):
         max_tokens=150
     )
     return response.choices[0].text.strip()
+
+def generate_pdf(pdf_path, quiz, flashcard, summary):
+    c = canvas.Canvas(pdf_path, pagesize=letter)
+    width, height = letter
+
+    c.drawString(100, height - 100, "Quiz")
+    c.drawString(100, height - 120, quiz)
+
+    c.drawString(100, height - 160, "Flashcards")
+    c.drawString(100, height - 180, flashcard)
+
+    c.drawString(100, height - 220, "Summary")
+    c.drawString(100, height - 240, summary)
+
+    c.save()

@@ -1,8 +1,8 @@
-# myproject/urls.py
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('IUI_4.urls')),
+    path('', views.home, name='home'),
+    path('upload/', views.upload_document, name='upload_document'),
+    path('process/<int:document_id>/', views.process_document, name='process_document'),
 ]

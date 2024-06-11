@@ -1,4 +1,3 @@
-// static/assets/js/scripts.js
 document.addEventListener('DOMContentLoaded', (event) => {
     var uploadBtn = document.getElementById("uploadBtn");
 
@@ -41,16 +40,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     console.log("Generated " + action + ": " + data[action]);
-                    // You can add code here to display the result on the page
+                    displayPDFLink(data.pdf_url); // Display the PDF link
                 })
                 .catch(error => {
                     console.error('Error:', error);
+                    alert("An error occurred while processing the file. Please try again.");
                 });
         } else {
             alert("Please select a file first.");
         }
+    }
+
+    function displayPDFLink(pdfUrl) {
+        var resultDiv = document.getElementById("result");
+        var resultsSection = document.getElementById("results");
+        resultDiv.innerHTML = `<a href="${pdfUrl}" target="_blank">Download/View Generated PDF</a>`;
+        resultsSection.style.display = "block"; // Show the results section
     }
 });
