@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path("",views.home, name="home"),
+    path('login/',views.login,name="login"),
+    path('about/',views.about,name="about"),
     
     path('upload/', views.upload_document, name='upload_document'),
     path('process/<int:document_id>/', views.process_document, name='process_document'),
