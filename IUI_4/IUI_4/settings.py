@@ -136,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #openai api key
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'YOUR_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'your api')
