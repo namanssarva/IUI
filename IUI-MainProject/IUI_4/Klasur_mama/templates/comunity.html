@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+    <title>Discussion Forum</title>
+  </head>
+  <body>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' %}"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <nav class="navbar navbar-expand-md navbar-light border-bottom p-0 ps-5">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <span class="text-main-color fw-bold fs-3">Discussion Forum</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--ICONS USED-->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item border-main-color">
+              <a class="nav-link" href="#">
+                <svg
+                  class="text-main-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 1200 1200"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="position-relative me-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 1200 1200"
+                    fill="currentcolor"
+                  >
+                    <path
+                      d="M320-600q17 0 28.5-11.5T360-640q0-17-11.5-28.5T320-680q-17 0-28.5 11.5T280-640q0 17 11.5 28.5T320-600Zm0 160q17 0 28.5-11.5T360-480q0-17-11.5-28.5T320-520q-17 0-28.5 11.5T280-480q0 17 11.5 28.5T320-440Zm0 160q17 0 28.5-11.5T360-320q0-17-11.5-28.5T320-360q-17 0-28.5 11.5T280-320q0 17 11.5 28.5T320-280ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm0-560v160-160 560-560Z"
+                    />
+                  </svg>
+                  <span
+                    class="position-absolute top-0 start-50 translate-middle ms-0 p-1 bg-danger border border-light rounded-circle"
+                  >
+                    <span class="visually-hidden">New alerts</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="position-relative me-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 1200 1200"
+                    fill="currentcolor"
+                  >
+                    <path
+                      d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+                    />
+                  </svg>
+                  <span
+                    class="position-absolute top-0 start-50 ms-3 translate-middle badge rounded-pill bg-danger"
+                  >
+                    9
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 -960 1200 1200"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="position-relative me-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 -960 1200 1200"
+                    fill="currentcolor"
+                  >
+                    <path
+                      d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"
+                    />
+                  </svg>
+                  <span
+                    class="position-absolute top-0 start-50 ms-3 translate-middle badge rounded-pill bg-danger"
+                  >
+                    19
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!--Search box-->
+          <form
+            class="d-flex"
+            action="https://www.google.com/search"
+            method="get"
+          >
+            <input
+              class="form-control me-2 search-icon ms-4"
+              type="text"
+              name="q"
+              placeholder=""
+              required
+            />
+            <button id="search-button" type="submit">Search</button>
+          </form>
+
+          <ul class="navbar-nav px-2">
+            <!--Profile photo-->
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <img
+                  class="profile rounded-circle"
+                  src="{% static 'src/profile.jpg' %}"
+                />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg
+                  class="text-muted"
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="48"
+                  viewBox="0 -960 960 960"
+                  width="48"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <div class="btn-group">
+            <button
+              id="button1"
+              type="button"
+              class="btn btn-sm bg-main-color fw-bold text-light"
+            >
+              Add Question
+            </button>
+            <button
+              id="button2"
+              type="button"
+              class="btn btn-sm bg-main-color dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="visually-hidden">Toggle dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--Study Tips Section-->
+    <div class="bg-light pt-4">
+      <div class="container mb-5">
+        <div class="row">
+          <div id="left-list" class="col-2 d-flex flex-column">
+            <a class="bg-second-color" href="#">
+              <span class="rounded">+</span>
+              <span>Study Tips</span>
+            </a>
+            <br />
+            <!--Technique 1-->
+            <a class="techniques" href="https://www.pomodorotechnique.com">
+              <img src="{% static 'src/promodoro.jpg' %}" />
+              <span>Promodoro Technique</span>
+            </a>
+            <!--Technique 2-->
+            <a
+              class="techniques"
+              href="https://www.retrievalpractice.org/why-it-works"
+            >
+              <img src="{% static 'src/retrieval-practice.png' %}" />
+              <span>Retrieval Practice</span>
+            </a>
+            <!--Technique 3-->
+            <a
+              class="techniques"
+              href="https://ucc.vt.edu/academic_support/study_skills_information/sq3r_reading-study_system.html#:~:text=SQ3R%20is%20a%20reading%20comprehension,gain%20from%20reading%20is%20important."
+            >
+              <img src="{% static 'src/brain.jpg' %}" />
+              <span>SQ3R Study Technique</span>
+            </a>
+            <!--Technique 4-->
+            <a
+              class="techniques"
+              href="https://www.structural-learning.com/post/spaced-practice-a-teachers-guide#:~:text=Spaced%20practice%20refers%20to%20a,strategies%20for%20long%2Dterm%20learning."
+            >
+              <img src="{% static 'src/spaced.jpg' %}" />
+              <span>Spaced Practice</span>
+            </a>
+            <!--Technique 5-->
+            <a
+              class="techniques"
+              href="https://medicine.llu.edu/academics/resources/pq4r-how-read-book-comprehension"
+            >
+              <img src="{% static 'src/photo1.jpg' %}" />
+              <span>PQ4R Method</span>
+            </a>
+            <!--Technique 6-->
+            <a
+              class="techniques"
+              href="https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching"
+            >
+              <img src="{% static 'src/photo2.webp' %}" />
+              <span>Feynman Technique</span>
+            </a>
+            <!--Technique 7-->
+            <a
+              class="techniques"
+              href="https://en.wikipedia.org/wiki/Leitner_system#:~:text=The%20Leitner%20system%20is%20a,are%20reviewed%20at%20increasing%20intervals."
+            >
+              <img src="{% static 'src/photo3.jpg' %}" />
+              <span>Leitner System</span>
+            </a>
+            <!--Technique 8-->
+            <a
+              class="techniques"
+              href="https://leverageedu.com/blog/color-coded-notes/"
+            >
+              <img src="{% static 'src/photo4.jpg' %}" />
+              <span>Color-Coded Notes</span>
+            </a>
+            <!--Technique 9-->
+            <a class="techniques" href="https://www.mindmapping.com">
+              <img src="{% static 'src/photo5.jpg.webp' %}" />
+              <span>Mind Mapping</span>
+            </a>
+            <!--Technique 10-->
+            <a
+              class="techniques"
+              href="https://www.wikihow.com/Improve-Your-Study-Routine-with-Exercise#:~:text=Exercise%20just%20before%20you%20study.&text=Go%20for%20a%20jog%20before,ready%20to%20study%20that%20evening.&text=Doing%20aerobic%20activity%20gets%20blood,helps%20your%20brain%20function%20better."
+            >
+              <img src="{% static 'src/photo6.jpg' %}" />
+              <span>Exercise Before Studying</span>
+            </a>
+            <!--Technique 11-->
+            <a class="techniques" href="#">
+              <img src="{% static 'src/photo7.jpg.webp' %}" />
+              <span>Study Before Bed</span>
+            </a>
+          </div>
+          <div class="col-7">
+            <div class="bg-white border-gray">
+              <div class="row">
+                <div class="col">
+                  <img
+                    class="profile rounded-circle"
+                    src="{% static 'src/profile.jpg' %}"
+                  />
+                  <input
+                    class="w-75 border-gray text-gray-dark rounded-pill bg-light ps-2 text-start"
+                    type="button"
+                    value="What do you want to ask or share?"
+                  />
+                </div>
+              </div>
+
+              <div class="row text-gray-darker pb-2 ps-4 pe-4">
+                <div class="col text-center border-end hover-dark">
+                  <img
+                    src="{% static 'src/question.png' %}"
+                    width="20px"
+                    height="20px"
+                  />
+                  <span>Ask</span>
+                </div>
+                <div class="col text-center border-end hover-dark">
+                  <img
+                    src="{% static 'src/Answer.png' %}"
+                    width="20px"
+                    height="20px"
+                  />
+                  <span>Answer</span>
+                </div>
+                <div class="col text-center border-end hover-dark">
+                  <img
+                    src="{% static 'src/Post.png' %}"
+                    width="20px"
+                    height="20px"
+                  />
+                  <span>Post</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="post bg-white border-gray mt-4">
+              <div class="pt-2 d-flex justify-content-between">
+                <div class="d-flex">
+                  <img
+                    class="post-profile rounded-circle"
+                    src="{% static 'src/profile.jpg' %}"
+                  />
+                  <div class="d-flex flex-column">
+                    <span class="fw-bold fs-6">Firstname Lastname</span>
+                    <span class="text-gray-darker fs-6"
+                      >Job title and positions</span
+                    >
+                  </div>
+                </div>
+
+                <div class="p-2 text-gray-darker">
+                  <button class="btn rounded-circle hover-dark p-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="currentcolor"
+                    >
+                      <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="post-body pt-2 ps-3">
+                <div class="post-title fw-bold">
+                  <a class="text-decoration-none text-black" href="#">
+                    We put the title of the post here
+                  </a>
+                </div>
+                <div class="post-text pt-1">
+                  text of the post. text of the post. text of the post. text of
+                  the post. text of the post. text of the post. text of the
+                  post. text of the post. text of the post. text of the post.
+                  text of the post. text of the post. text of the post. text of
+                  the post. text of the post. text of the post.
+                </div>
+              </div>
+              <div class="post-image pt-2">
+                <img class="img-fluid" src="{% static 'src/spaced.jpg' %}" />
+              </div>
+              <div class="post-footer pt-2 pb-1 ps-2s">
+                <div class="btn-group" role="group">
+                  <!--like-->
+                  <button
+                    type="button"
+                    class="left-button post-button bg-second-color border-0 text-black p-1"
+                  >
+                    <svg
+                      class="thumbs-up"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#5f6368"
+                    >
+                      <path
+                        d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"
+                      />
+                    </svg>
+                    Like
+                  </button>
+                </div>
+                <!--dislike-->
+                <button
+                  type="button"
+                  class="right-button post-button bg-second-color border-0 text-black p-1"
+                >
+                  <svg
+                    class="Thumbs-down"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#5f6368"
+                  >
+                    <path
+                      d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"
+                    />
+                  </svg>
+                  Dislike
+                </button>
+
+                <!--comment-->
+                <button
+                  type="button"
+                  class="post-button bg-second-color rounded-circle border-0 text-black p-1"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#5f6368"
+                  >
+                    <path
+                      d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z"
+                    />
+                  </svg>
+                  Comment
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <ul class="list-group">
+              <li class="lits-group-item d-flex justify-content-between">
+                <div class="feedback">
+                  <img
+                    src="{% static 'src/feedback.png' %}"
+                    width="20"
+                    height="20"
+                    alt="Feedback Icon"
+                  />
+                  <b
+                    >We would like your
+                    <span style="color: #4caf50">"FEEDBACK"</span> to improve
+                    our Website</b
+                  >
+                </div>
+              </li>
+            </ul>
+            <div class="smileys-container">
+              <div class="smileys">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="40px"
+                  viewBox="0 -960 960 960"
+                  width="40px"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M480-420q-68 0-123.5 38.5T276-280h408q-25-63-80.5-101.5T480-420Zm-168-60 44-42 42 42 42-42-42-42 42-44-42-42-42 42-44-42-42 42 42 44-42 42 42 42Zm250 0 42-42 44 42 42-42-42-42 42-44-42-42-44 42-42-42-42 42 42 44-42 42 42 42ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z"
+                  />
+                </svg>
+              </div>
+              <div class="smileys">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="40px"
+                  viewBox="0 -960 960 960"
+                  width="40px"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 100q-68 0-123.5 38.5T276-280h66q22-37 58.5-58.5T480-360q43 0 79.5 21.5T618-280h66q-25-63-80.5-101.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z"
+                  />
+                </svg>
+              </div>
+              <div class="smileys">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="40px"
+                  viewBox="0 -960 960 960"
+                  width="40px"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm140 260q68 0 123.5-38.5T684-400h-66q-22 37-58.5 58.5T480-320q-43 0-79.5-21.5T342-400h-66q25 63 80.5 101.5T480-260Zm0 180q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z"
+                  />
+                </svg>
+              </div>
+              <div class="smileys">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="40px"
+                  viewBox="0 -960 960 960"
+                  width="40px"
+                  fill="currentcolor"
+                >
+                  <path
+                    d="M480-260q68 0 123.5-38.5T684-400H276q25 63 80.5 101.5T480-260ZM312-520l44-42 42 42 42-42-84-86-86 86 42 42Zm250 0 42-42 44 42 42-42-86-86-84 86 42 42ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <br />
+            <div class="form-container">
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="23f2c6b0-da61-4557-8396-f15219a3e9c8"
+                />
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Username"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
