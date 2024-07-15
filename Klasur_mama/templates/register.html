@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+ 
+<html style="font-size: 16px;" lang="de"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>register</title>
+    <link rel="stylesheet" href="/static/css/page3.css" media="screen">
+<link rel="stylesheet" href="/static/css/Page-6.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/js/jquery2.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/js/page3.js" defer=""></script>
+    <meta name="generator" content="">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 6">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="de">
+    <section class="u-clearfix u-container-align-center-sm u-container-align-center-xs u-container-align-right-lg u-container-align-right-md u-container-align-right-xl u-image u-section-1" id="sec-25ae" data-image-width="2000" data-image-height="1125">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-form u-white u-form-1">
+          <form action="" class="u-clearfix u-form-spacing-19 u-form-vertical u-inner-form" source="email" name="form" style="padding: 19px;" method="post">
+            {% csrf_token %} 
+            <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-1">
+              <h2 class="u-text u-text-default u-text-1">Register Here! </h2>
+              <hr>
+              {% if messages %}
+              {% for message in messages %}
+                  <div>{{ message }}</div>
+              {% endfor %}
+          {% endif %}
+              <label for="name-961f" class="u-label">First Name</label>
+              <input type="text" placeholder="Enter your First Name" id="name-961f" name="first_name" class="u-border-none u-input u-input-rectangle u-palette-3-light-3 u-radius-10" required="first_name">
+            </div>
+            <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+              <label for="name-961f" class="u-label">Last Name</label>
+              <input type="text" placeholder="Enter your Last Name" id="name-961f" name="last_name" class="u-border-none u-input u-input-rectangle u-palette-3-light-3 u-radius-10" required name ="last_name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputUsername" class="u-label">Username</label>
+              <input type="text" placeholder="Enter a username" id="username-a30d" name="username" class="u-border-none u-input u-input-rectangle u-palette-3-light-3 u-radius-10" required="username">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="u-label">Password</label>
+                <input type="password" placeholder="Enter your password" id="password-a30d" name="password" class="u-border-none u-input u-input-rectangle u-palette-3-light-3 u-radius-10" required="">
+              </div>
+            <div class="u-align-right u-form-group u-form-submit">
+              <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-3-base u-radius-20 u-btn-1">Sign Up Now</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <a href="/login/" class="u-border-active-palette-2-base u-border-hover-palette-1-base u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-active-grey-50 u-text-hover-grey-50 u-text-palette-2-base u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Already have an account?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+
+  
+</body></html>
