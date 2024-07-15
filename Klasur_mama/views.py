@@ -10,7 +10,7 @@ from PyPDF2 import PdfReader
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.models import User
 
-openai.api_key = settings.OPENAI_API_KEY
+
 
 def home(request):
     context = {}
