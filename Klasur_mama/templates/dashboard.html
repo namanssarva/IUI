@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,7 +24,7 @@
                 ],
                 urls: ["{% static 'assets/css/fonts.min.css' %}"],
             },
-            active: function() {
+            active: function () {
                 sessionStorage.fonts = true;
             },
         });
@@ -37,6 +38,7 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
 </head>
+
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
@@ -45,7 +47,8 @@
                 <!-- Logo Header -->
                 <div class="logo-header" data-background-color="dark">
                     <a href="index.html" class="logo">
-                        <img src="{% static 'assets/img/kaiadmin/logo.svg' %}" alt="navbar brand" class="navbar-brand" height="120" />
+                        <img src="{% static 'assets/img/kaiadmin/logo.svg' %}" alt="navbar brand" class="navbar-brand"
+                            height="120" />
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
@@ -69,7 +72,7 @@
                                 <i class="fas fa-home"></i>
                                 <p> My board</p>
                             </a>
-                            <a href="#dashboard" class="collapsed" aria-expanded="false">
+                            <a href="/final/" class="collapsed" aria-expanded="false">
                                 <i class="fas fa-home"></i>
                                 <p> Community</p>
                             </a>
@@ -102,14 +105,17 @@
                 <!-- Navbar Header -->
                 <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
                     <div class="container-fluid">
-                        <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p=0 d-none d-lg-flex">
+                        <nav
+                            class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p=0 d-none d-lg-flex">
                         </nav>
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
                             <li class="nav-item topbar-icon dropdown hidden-caret">
-                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-envelope"></i>
                                 </a>
-                                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                                <ul class="dropdown-menu messages-notif-box animated fadeIn"
+                                    aria-labelledby="messageDropdown">
                                     <li>
                                         <div class="dropdown-title d-flex justify-content-between align-items-center">
                                             Messages
@@ -121,7 +127,8 @@
                                             <div class="notif-center">
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="{% static 'assets/img/jm_denis.jpg' %}" alt="Img Profile" />
+                                                        <img src="{% static 'assets/img/jm_denis.jpg' %}"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jimmy Denis</span>
@@ -131,7 +138,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="{% static 'assets/img/chadengle.jpg' %}" alt="Img Profile" />
+                                                        <img src="{% static 'assets/img/chadengle.jpg' %}"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Chad</span>
@@ -141,7 +149,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="{% static 'assets/img/mlane.jpg' %}" alt="Img Profile" />
+                                                        <img src="{% static 'assets/img/mlane.jpg' %}"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jhon Doe</span>
@@ -151,7 +160,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="{% static 'assets/img/talha.jpg' %}" alt="Img Profile" />
+                                                        <img src="{% static 'assets/img/talha.jpg' %}"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Talha</span>
@@ -163,12 +173,14 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i></a>
+                                        <a class="see-all" href="javascript:void(0);">See all messages<i
+                                                class="fa fa-angle-right"></i></a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret">
-                                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-bell"></i>
                                     <span class="notification">4</span>
                                 </a>
@@ -201,7 +213,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="{% static 'assets/img/profile2.jpg' %}" alt="Img Profile" />
+                                                        <img src="{% static 'assets/img/profile2.jpg' %}"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="block">Reza sent a message to you </span>
@@ -221,19 +234,22 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i></a>
+                                        <a class="see-all" href="javascript:void(0);">See all notifications<i
+                                                class="fa fa-angle-right"></i></a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="nav-item topbar-user dropdown hidden-caret">
-                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
+                                    aria-expanded="false">
                                     <div class="avatar-sm">
-                                        <img src="{% static 'assets/img/profile.jpg' %}" alt="..." class="avatar-img rounded-circle" />
+                                        <img src="{% static 'assets/img/profile.jpg' %}" alt="..."
+                                            class="avatar-img rounded-circle" />
                                     </div>
                                     <span class="profile-username">
                                         <span class="op-7">Hi,</span>
-                                        <span class="fw-bold">Cliford</span>
+                                        <span class="fw-bold">{{ request.user.username }}<data value="username"></data></span>
                                     </span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -241,12 +257,14 @@
                                         <li>
                                             <div class="user-box">
                                                 <div class="avatar-lg">
-                                                    <img src="{% static 'assets/img/profile.jpg' %}" alt="image profile" class="avatar-img rounded" />
+                                                    <img src="{% static 'assets/img/profile.jpg' %}" alt="image profile"
+                                                        class="avatar-img rounded" />
                                                 </div>
                                                 <div class="u-text">
                                                     <h4>Hizrian</h4>
                                                     <p class="text-muted">hello@example.com</p>
-                                                    <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                                    <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View
+                                                        Profile</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -269,21 +287,27 @@
 
             <!-- Main Content Area -->
             <div class="container mt-4">
-                <div class="row" style="background-image: url('{% static 'assets/img/banar/pic1.jpg' %}'); background-size: cover; background-position: center;margin-top: 50px;">
-                    <div class="col-md-12 text-center" style="margin-top: 100px; margin-bottom: 100px; padding: 90px 0;">
+                <div class="row"
+                    style="background-image: url('{% static 'assets/img/banar/pic1.jpg' %}'); background-size: cover; background-position: center;margin-top: 50px;">
+                    <div class="col-md-12 text-center"
+                        style="margin-top: 100px; margin-bottom: 100px; padding: 90px 0;">
                         <h2 style="color: white;">Learning never made This easy</h2>
                         <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-group" style="display:none;">
-                                <input type="file" name="pdf" class="form-control-file" id="pdfFile">
+                                <input type="file" name="pdf" class="form-control-file" id="fileInput">
                             </div>
-                            <button type="button" class="btn btn-success mt-2" onclick="document.getElementById('pdfFile').click();">Click to Upload</button>
+                            <button type="button" class="btn btn-success mt-2"
+                                onclick="document.getElementById('fileInput').click();">Click to Upload</button>
                             <button type="submit" class="btn btn-success mt-2">Submit</button>
                         </form>
                         <div class="mt-4">
-                            <button class="btn btn-danger" onclick="generateContent('questions')">Generate Quiz</button>
-                            <button class="btn btn-warning" onclick="generateContent('flashcards')">Generate Flashcard</button>
-                            <button class="btn btn-primary" onclick="generateContent('summary')">Generate Summary</button>
+                            <button id="generateQuiz" class="btn btn-danger"
+                                onclick="generateContent('questions')">Generate Quiz</button>
+                            <button id="generateFlashcards" class="btn btn-warning"
+                                onclick="generateContent('flashcards')">Generate Flashcards</button>
+                            <button id="generateSummary" class="btn btn-primary"
+                                onclick="generateContent('summary')">Generate Summary</button>
                         </div>
                     </div>
                 </div>
@@ -296,13 +320,15 @@
                                 <div id="generatedContent">
                                     <p>Your generated content will appear here...</p>
                                 </div>
-                                <button id="shareButton" class="btn btn-info mt-4" style="display:none;">Share Content</button>
+                                <button id="shareButton" class="btn btn-info mt-4" style="display:none;">Share
+                                    Content</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- End Main Content Area -->
+
         </div>
     </div>
 
@@ -354,11 +380,11 @@
                     'content_type': contentType,
                     'csrfmiddlewaretoken': '{{ csrf_token }}'
                 },
-                success: function(response) {
+                success: function (response) {
                     $('#generatedContent').html('');
                     let content = '';
                     if (contentType === 'questions' || contentType === 'flashcards') {
-                        response.content.forEach(function(item) {
+                        response.content.forEach(function (item) {
                             content += '<p>' + item + '</p>';
                         });
                     } else {
@@ -369,7 +395,7 @@
                     // Show share button
                     $('#shareButton').show();
                 },
-                error: function(response) {
+                error: function (response) {
                     $('#generatedContent').html('<p>An error occurred while generating the content.</p>');
                     // Hide share button on error
                     $('#shareButton').hide();
@@ -378,7 +404,7 @@
         }
 
         // Share functionality
-        document.getElementById('shareButton').addEventListener('click', function() {
+        document.getElementById('shareButton').addEventListener('click', function () {
             let content = document.getElementById('generatedContent').innerText;
             if (navigator.share) {
                 navigator.share({
@@ -389,9 +415,22 @@
                     console.log('Thanks for sharing!');
                 }).catch(console.error);
             } else {
-                alert('Sharing is not supported in this browser.');
+                copyToClipboard(content);
+                alert('Content has been copied successfully. Share in community.');
             }
         });
+
+        function copyToClipboard(content) {
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = content;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+        }
+
+
     </script>
 </body>
+
 </html>

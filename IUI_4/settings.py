@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-
+SECRET_KEY = 'APi_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -134,4 +134,5 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+#openai api key
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'API_KEY')

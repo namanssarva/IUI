@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Page</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/assets/css/final.css/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h2 class="log">
+                Discussion Forum
+            </h2>
+            <form class= "d-flex" action="https://www.google.com/search" method="get">
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+                    <input type="search" name="q" placeholder="Search">     
+                </div>
+            </form>
+            <button class="theme-button" class="btn btn-primary" id="theme">Theme</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- =================== STUDY TIPS SECTION (LEFT) =======================-->
+            <div class="left">
+                <div class="study-techniques">
+                    <a class="techniques" href="https://www.pomodorotechnique.com">
+                        <img src="https://web-static.wrike.com/blog/content/uploads/2021/11/iStock-1302208532.jpg?av=15112cfb5bfa14185f0d98bd9d046e40">
+                        <span><h5>Promodoro Technique</h5></span>
+                    </a>
+                    <!--Technique 2-->
+                    <a class="techniques" href="https://www.retrievalpractice.org/why-it-works">
+                        <img src="data:image/png;base64,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">
+                        <span><h5>Retrieval Practice</h5></span>
+                    </a>
+                    <!--Technique 3-->
+                    <a class="techniques" href="https://ucc.vt.edu/academic_support/study_skills_information/sq3r_reading-study_system.html#:~:text=SQ3R%20is%20a%20reading%20comprehension,gain%20from%20reading%20is%20important.">
+                        <img src="https://t4.ftcdn.net/jpg/03/56/05/19/360_F_356051965_svKCjet9z9sJX0a6rVxZMcYs3nUzt7Yc.jpg">
+                        <span><h5>SQ3R Study Technique</h5></span>
+                    </a>
+                    <!--Technique 4-->
+                    <a class="techniques" href="https://www.structural-learning.com/post/spaced-practice-a-teachers-guide#:~:text=Spaced%20practice%20refers%20to%20a,strategies%20for%20long%2Dterm%20learning.">
+                        <img src="https://cdn4.iconfinder.com/data/icons/modern-education-3/128/131-512.png">
+                        <span><h5>Spaced Practice</h5></span>
+                    </a>
+                    <!--Technique 5-->
+                    <a class="techniques" href="https://medicine.llu.edu/academics/resources/pq4r-how-read-book-comprehension">
+                        <img src="https://thumbs.dreamstime.com/b/study-late-night-isolated-cartoon-vector-illustrations-tired-boy-studying-hardly-evening-educational-process-preparing-253365495.jpg">
+                        <span><h5>PQ4R Method</h5></span>
+                    </a>
+                    <!--Technique 6-->
+                    <a class="techniques" href="https://www.colorado.edu/artssciences-advising/resource-library/life-skills/the-feynman-technique-in-academic-coaching">
+                        <img src="https://static.vecteezy.com/system/resources/previews/002/889/974/original/cute-fox-study-with-laptop-cartoon-icon-illustration-free-vector.jpg">
+                        <span><h5>Feynman Technique</h5></span>
+                    </a>
+                    <!--Technique 7-->
+                    <a class="techniques" href="https://en.wikipedia.org/wiki/Leitner_system#:~:text=The%20Leitner%20system%20is%20a,are%20reviewed%20at%20increasing%20intervals.">
+                        <img src="https://images.freeimages.com/365/images/istock/previews/1865/18653648-cartoon-brain-with-idea.jpg">
+                        <span><h5>Leitner System</h5></span>
+                    </a>
+                    <!--Technique 8 -->
+                    <a class="techniques" href="https://leverageedu.com/blog/color-coded-notes/">
+                        <img src="https://i.pinimg.com/736x/9f/5f/2a/9f5f2ae0379928ba306bbf91a48ec161.jpg">
+                        <span><h5>Color-Coded Notes</h5></span>
+                    </a>
+                    <!-- (Technique 9) -->
+                    <a class="techniques" href="https://www.mindmapping.com">
+                        <img src="https://thumbs.dreamstime.com/b/cartoon-man-mind-map-hand-drawn-vector-illustration-style-pink-purple-orange-black-white-blue-152124451.jpg">
+                        <span><h5>Mind Mapping</h5></span>
+                    </a>
+                    <!-- (Technique 10) -->
+                    <a class="techniques" href="https://www.wikihow.com/Improve-Your-Study-Routine-with-Exercise#:~:text=Exercise%20just%20before%20you%20study.&text=Go%20for%20a%20jog%20before,ready%20to%20study%20that%20evening.&text=Doing%20aerobic%20activity%20gets%20blood,helps%20your%20brain%20function%20better.">
+                        <img src="https://t3.ftcdn.net/jpg/03/59/88/16/360_F_359881603_dYlPbJPpYhAqkqdCuAoI52tPAZiSzQRS.jpg">
+                        <span><h5>Exercise Before Studying</h5></span>
+                    </a>
+                    <!-- (Technique 11) -->
+                    <a class="techniques" href="#">
+                        <img src="https://i.pinimg.com/736x/1e/d7/be/1ed7becddc1ce86a38399bd01617792f.jpg">
+                        <span><h5>Study Before Bed</h5></span>
+                    </a> 
+                </div>
+                <!-- ==================== END OF SIDEBAR ======================-->
+                 <label for="create-post" class="btn btn-primary">Create Post</label>
+            </div>
+
+           <!-- =================== POST SECTION (MIDDLE) ======================= -->
+        <div class="middle">
+                <form class="create-post">
+                    <div class="profile-photo">
+                        <img src="https://www.befunky.com/images/wp/wp-2021-01-linkedin-profile-picture-focus-face.jpg?auto=avif,webp&format=jpg&width=944">
+                    </div>
+                    <input type="text" placeholder="What's on your mind?" id="create-post-text">
+                    <span class="upload-image material-icons" id="upload-trigger">upload_file</span>
+                    <span class="submit-btn material-icons" id="submit-post">done_all</span>
+                    <input type="file" id="file-upload" accept="image/*" style="display: none;">
+                </form>
+                <div class = "feeds" id="feed">
+                    <!-- Existing Posts will go here -->
+                </div>
+        </div>
+            <!-- =================== FEEDBACK SECTION (RIGHT) ======================= -->
+            <div class="right">
+                <div class="form-container">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="23f2c6b0-da61-4557-8396-f15219a3e9c8">
+                        <h3>We would like your <span style="color: #4CAF50;">"FEEDBACK"</span> to improve our Website</h3><br>
+                        <div class="rating">
+                            <input type="number" name="rating" hidden>
+                            <i class='bx bx-star star' style="--i: 0;"></i>
+                            <i class='bx bx-star star' style="--i: 1;"></i>
+                            <i class='bx bx-star star' style="--i: 2;"></i>
+                            <i class='bx bx-star star' style="--i: 3;"></i>
+                            <i class='bx bx-star star' style="--i: 4;"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="btn-group" class="btn btn-primary">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- =================== END FEEDBACK SECTION (RIGHT) ======================= --> 
+        </div>
+    </main>
+
+    <!--  Theme Customization -->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p>Manage your font size, color, and background.</p>
+            <!-- Font Sizes -->
+            <div class="font-size">
+                <h4>Font Size</h4>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2 active"></span>
+                        <span class="font-size-3"></span>
+                        <span class="font-size-4"></span>
+                        <span class="font-size-5"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+            <!-- Primary colors -->
+            <div class="color">
+                <h4>Color</h4>
+                <div class="choose-color">
+                    <span class="color-1 active"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+            <!-- Background Colors -->
+            <div class="background">
+                <h4>Background</h4>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5>Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5>Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5>Lights Out</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/assets/js/final.js/"></script>
+    <script src="/static/assets/js/rating.js/"></script>
+    <script src="/static/assets/js/theme.js/"></script>
+    <!-- 
+    <script src="likedislike.js"></script>  
+    
+    <script src="upload.js"></script>
+    <script src="com.js"></script>
+    <script src ="feed.js"></script> -->
+</body>
+</html>
